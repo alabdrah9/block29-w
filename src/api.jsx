@@ -1,4 +1,4 @@
-const API_URL = "https://fsa-puppy-bowl.herokuapp.com/api/2308-ac-pt-web-pt-a/";
+const API_URL = "https://fsa-puppy-bowl.herokuapp.com/api/2308-ac-pt-web-pt-a";
 
 
 export async function gtePlayers() {
@@ -41,11 +41,12 @@ export async function deletePlayer(playerID) {
     try {
         const response = await fetch(`${API_URL}/players/${playerID}`,
         method: "DELETE",
+        
         );
         await response.jason();
         
     } catch (error) {
-        console.error(error);
+     console.error(error);
     }
 }
 
