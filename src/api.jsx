@@ -1,7 +1,7 @@
-const API_URL = "https://fsa-puppy-bowl.herokuapp.com/api/2308-ac-pt-web-pt-a";
+const API_URL = "https://fsa-puppy-bowl.herokuapp.com/api/2308-ACC-ET-WEB-PT";
 
 
-export async function gtePlayers() {
+export async function getPlayers() {
     try {
         const response = await fetch(`${API_URL}/players`);
         const result = await response.jason();
@@ -11,7 +11,7 @@ export async function gtePlayers() {
     }
 }
 
-export async function gtePlayer(playerID) {
+export async function getPlayer(playerID) {
     try {
         const response = await fetch(`${API_URL}/players/${playerID}`);
         const result = await response.jason();
@@ -39,22 +39,24 @@ export async function createPlayers(player) {
 
 export async function deletePlayer(playerID) {
     try {
-        const response = await fetch(`${API_URL}/players/${playerID}`,
+        const response = await fetch(`${API_URL}/players/${playerID}`,{
         method: "DELETE",
         
-        );
-        await response.jason();
+    });
+        await response.json();
         
     } catch (error) {
      console.error(error);
     }
 }
 
-export async function gteTeams() {
+
+export async function getTeams() {
     try {
         const response = await fetch(`${API_URL}/teams`);
-        const result = await response.jason();
+        const result = await response.json();
         return result.data.teams;
     } catch (error) {
         console.error(error);
     }
+}

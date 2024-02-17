@@ -1,4 +1,6 @@
-export default function Player({player, onClick , onDelete}){
+
+
+export default function Player({player, onClick ,handlePlayerClick}){
     return(
  
 <tr key={player.id}>
@@ -7,10 +9,10 @@ export default function Player({player, onClick , onDelete}){
   <td>{player.Action}</td>
   <td>
     <button onClick={handlePlayerClick(player.id)}> View Player</button>
-    <button onDelete={handlePlayerClick(player.id)}> Delete Player</button>
+    <button onClick={handlePlayerClick(player.id)}> Delete Player</button>
     
   </td>
 </tr>
 
- );
+    );
 }
